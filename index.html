@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sean Ward's Waste Wizard Sorter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =====================================================
+     HOMEPAGE
+====================================================== -->
+<div id="home">
+
+  <div class="marquee-wrap">
+    <span class="marquee-inner">
+      *** WELCOME TO SEAN WARD'S WASTE WIZARD SORTER ***&nbsp;&nbsp;&nbsp;
+      HAZARDOUS WASTE CLASSIFICATION MADE EASY&nbsp;&nbsp;&nbsp;
+      *** ALWAYS CHECK YOUR SDS SECTION 14 ***&nbsp;&nbsp;&nbsp;
+      CLICK ENTER BELOW TO BEGIN THE CLASSIFICATION KEY&nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="site-wordmark">Waste Wizard</div>
+    <div class="header-right">
+      <div class="screen-box">
+        <div class="screen-inner">
+          <span class="screen-hello">classify.</span>
+          <span class="screen-sub">(correctly)</span>
+        </div>
+      </div>
+      <div class="screen-stand"></div>
+      <div class="screen-base"></div>
+    </div>
+  </div>
+
+  <!-- DATE BAR -->
+  <div class="date-bar">Sean Ward's Hazardous Waste Classification System</div>
+
+  <!-- NEWS BAR -->
+  <div class="news-bar">
+    <div class="news-label">Latest Update</div>
+    <div class="news-text">Always check Section 14 of your SDS before classifying any waste stream.</div>
+  </div>
+
+<!-- THREE COLUMNS -->
+<div class="three-col">
+
+  <!-- References -->
+  <div class="col">
+    <div class="img-slot">
+      <img src="bottle.png" style="width:100%; height:100%; object-fit:contain;">
+    </div>
+    <span class="col-title">References.</span>
+    <span class="col-desc">Maps, guides, and certification references for every job.</span>
+    <div class="col-links">
+      <a href="#" onclick="openImgModal('brandeismap.png')">Brandeis Map</a>
+      <a href="#" onclick="openImgModal('printingguide.png')">Printing Guide</a>
+      <a href="#" onclick="openImgModal('nicertguide.png')">NI-Cert Guide</a>
+      <a href="#" onclick="openImgModal('class8guide.png')">Class 8 Subseg</a>
+    </div>
+  </div>
+
+  <!-- Classify / Enter -->
+  <div class="col">
+    <div class="img-slot">
+      <img src="bottle.png" style="width:100%; height:100%; object-fit:contain;">
+    </div>
+    <span class="col-title">Classify.</span>
+    <span class="col-desc">Answer a series of questions to route your waste to the correct disposal method.</span>
+    <div class="enter-wrap">
+      <button class="enter-btn" onclick="startApp()">&#9658; ENTER THE KEY</button>
+    </div>
+  </div>
+
+  <!-- Resources -->
+  <div class="col">
+    <div class="img-slot">
+      <img src="bottle.png" style="width:100%; height:100%; object-fit:contain;">
+    </div>
+    <span class="col-title">Resources.</span>
+    <span class="col-desc">Truck segregation, placarding, UN codes, and more.</span>
+    <div class="col-links">
+      <a href="#" onclick="openImgModal('uncodes.png')">UN Code Det.</a>
+      <a href="#" onclick="openImgModal('wastelandtyping.png')">Wasteland Typing</a>
+      <a href="#" onclick="openImgModal('truckseg.png')">Truck Seg &amp; Placard</a>
+      <a href="#" onclick="openImgModal('suggestions.png')">Suggestions</a>
+    </div>
+  </div>
+
+</div><!-- end three-col -->
+
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <div class="nav-store">
+      <span class="nav-store-top">Waste<br>Wizard</span>
+    </div>
+    <div class="nav-links">
+      <div class="nav-col">
+        <span class="nav-link" onclick="startApp()">Classification Key</span>
+        <span class="nav-link">About This Tool</span>
+      </div>
+      <div class="nav-col">
+        <span class="nav-link" onclick="openImgModal('brandeismap.png')">References</span>
+        <span class="nav-link">SDS Help</span>
+      </div>
+      <div class="nav-col">
+        <span class="nav-link">D-Code List</span>
+        <span class="nav-link">Process Codes</span>
+      </div>
+      <div class="nav-col">
+        <span class="nav-link">Packaging Rules</span>
+        <span class="nav-link">Contact Supervisor</span>
+      </div>
+    </div>
+    <!-- Logo slot -->
+    <div class="nav-logo" id="logo-slot">
+      <img id="logo-img" src="">
+      <div class="nav-logo-placeholder" id="logo-label">your<br>logo</div>
+      <input type="file" accept="image/*" onchange="loadImg(this,'logo-img','logo-label')">
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-bar">
+    <label><b>Find:</b>
+      <input type="text" placeholder="">
+      <button>Shortcut</button><button>Search</button>
+    </label>
+    <div class="search-links">
+      <a href="#">Site Map</a> - <a href="#">Search Tips</a> - <a href="#">Index</a>
+    </div>
+  </div>
+
+</div><!-- end home -->
+
+
+<!-- =====================================================
+     APP — CLASSIFICATION KEY
+====================================================== -->
+<div id="app" style="display:none;">
+
+  <div class="app-top-bar">
+    <span class="app-top-title">Waste Wizard — Classification Key</span>
+    <button class="app-top-btn" onclick="goBack()">◀ Back</button>
+    <button class="app-top-btn" onclick="startOver()">↺ Start Over</button>
+    <button class="app-top-btn" onclick="goHome()">🏠 Home</button>
+  </div>
+
+  <div class="app-wrap">
+
+    <div class="breadcrumb">
+      <a href="#" onclick="goHome()">Home</a> &rsaquo; Classification Key
+    </div>
+
+    <!-- QUESTION SECTION -->
+    <div id="question-section">
+      <div class="q-card">
+        <div class="q-card-header">
+          <span id="q-header-label">Question</span>
+          <button id="help-btn" style="display:none;" class="help-link">? Help</button>
+        </div>
+        <div class="q-body">
+          <div class="q-text" id="question"></div>
+          <div class="answers" id="answers"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="goBack()">◀ Back</button>
+        <button class="ctrl-btn" onclick="startOver()">↺ Start Over</button>
+        <button class="ctrl-btn" onclick="goHome()">🏠 Home</button>
+      </div>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div id="result-section" style="display:none;">
+      <div class="result-card">
+        <div class="result-header">
+          <span>✔ Classification Complete</span>
+          <span>Result</span>
+        </div>
+        <div class="result-title-row">
+          <span class="result-title" id="result-title"></span>
+        </div>
+        <div class="result-body">
+          <div class="result-left">
+            <h3>Disposal Details</h3>
+            <ul id="result-bullets"></ul>
+          </div>
+          <div class="result-right">
+            <h3>Notes</h3>
+            <div id="result-notes"></div>
+            <button class="done-btn" onclick="startOver()">↺ Start Over</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="goBack()">◀ Back</button>
+        <button class="ctrl-btn" onclick="startOver()">↺ Start Over</button>
+        <button class="ctrl-btn" onclick="goHome()">🏠 Home</button>
+      </div>
+    </div>
+
+  </div><!-- end app-wrap -->
+</div><!-- end app -->
+
+
+<!-- HELP MODAL -->
+<div id="help-modal" style="display:none;">
+  <div id="help-box">
+    <div id="help-titlebar">
+      <span>Help</span>
+      <button onclick="closeHelp()">✕</button>
+    </div>
+    <div id="help-text"></div>
+    <div id="help-footer"><button onclick="closeHelp()">Close</button></div>
+  </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="img-modal" style="display:none;" onclick="closeImgModal()">
+  <div id="img-modal-box" onclick="event.stopPropagation()">
+    <div id="img-modal-titlebar">
+      <span>Reference Image</span>
+      <button onclick="closeImgModal()">✕</button>
+    </div>
+    <img id="img-modal-img" src="" alt="Reference">
+    <div id="img-modal-footer"><button onclick="closeImgModal()">Close</button></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
