@@ -199,7 +199,7 @@ a:hover { color: #cc0000; }
   border-left-color: #444444;
   border-right-color: #cccccc;
   border-bottom-color: #cccccc;
-  background: #f0f0f0;
+  background: none;
   display: flex;
   flex-direction: column;
   align-items: center;
