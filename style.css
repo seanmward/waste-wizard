@@ -112,7 +112,7 @@ a:hover { color: #cc0000; }
    HOMEPAGE — NEWS BAR
 ============================================================ */
 .news-bar {
-  margin: 8px 20px;
+  margin: 8px 0;
   border: 2px solid #888888;
   border-top-color: #444444;
   border-left-color: #444444;
@@ -148,7 +148,7 @@ a:hover { color: #cc0000; }
 ============================================================ */
 .three-col {
   display: flex;
-  margin: 0 20px;
+  margin: 0;
   border: 2px solid #888888;
   border-top-color: #444444;
   border-left-color: #444444;
@@ -278,7 +278,7 @@ a:hover { color: #cc0000; }
    HOMEPAGE — NAV BAR
 ============================================================ */
 .nav-bar {
-  margin: 8px 20px 0;
+  margin: 8px 0;
   background: #000000;
   border: 2px solid #333333;
   border-top-color: #666666;
