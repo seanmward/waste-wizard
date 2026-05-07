@@ -87,7 +87,7 @@ const data = {
       question: "What is the primary Hazard Class?",
       options: [
         { text: "5.1", next: "qi5_1" },
-        { text: "6.1", next: "qi6_1" },
+        { text: "6.1", next: "qazidestox2" },
         { text: "8", next: "qi8" }
       ]
     },
@@ -154,8 +154,30 @@ const data = {
       options: [
         { text: "3", next: "qnfpa" },
         { text: "5.1", next: "high_haz" },
-        { text: "6.1", next: "f6_1" },
+        { text: "6.1", next: "qazidestox" },
         { text: "8", next: "q8l" }
+      ]
+    },
+    
+    qazidestox: {
+      type: "q",
+      question: "Are the following present: sodium azide, arsenic acid/oxides, toxins, or mercury?",
+      options: [
+        { text: "Yes, mercury", next: "qmerc" },
+        { text: "Yes, azides or arsenics", next: "qazides6_1" },
+        { text: "Yes, toxins extracted from living sources", next: "itoxin" },
+        { text: "No", next: "f6.1" }
+      ]
+    },
+    
+    qazides6_1: {
+      type: "q",
+      question: "Which is present?",
+      options: [
+        { text: "Sodium azide, > 1% hazardous mixture", next: "iazide1" },
+        { text: "Sodium azide, > 1%", next: "iazide2" },
+        { text: "Sodium azide, spent", next: "iazide3" },
+        { text: "Arsenic acid/oxides", next: "iazide4" }
       ]
     },
     
@@ -206,12 +228,50 @@ const data = {
       ]
     },
 
-    qi6_1: {
+    qazidestox2: {
       type: "q",
-      question: "Is there a 6.1 piece with organics present?",
+      question: "Are the following present: sodium azide, arsenic acid/oxides, toxins, or mercury?",
       options: [
-        { text: "Yes — I will pack with the 6.1 organic piece", next: "f6_1" },
-        { text: "No", next: "i005" }
+        { text: "Yes, mercury", next: "qmerc" },
+        { text: "Yes, azides or arsenics", next: "qazides6_1" },
+        { text: "Yes, toxins extracted from living sources", next: "itoxin" },
+        { text: "No", next: "qtoxicinorg" }
+      ]
+    },
+
+    qtoxicinorg: {
+      type: "q",
+      question: "What is the packing group?",
+      options: [
+        { text: "Packing group I", next: "ipg1" },
+        { text: "Packing group II-III", next: "qtoxicexistingorg" }
+      ]
+    },
+
+    qtoxicexistingorg: {
+      type: "q",
+      question: "Is there a preexisting 6.1 organic piece??",
+      options: [
+        { text: "Yes, I will pack this inorganic with the compatible 6.1 organic piece", next: "qtoxorgbottle" },
+        { text: "No, this will be fully inorganic", next: "tinortox" }
+      ]
+    },
+
+    qtoxorgbottle: {
+      type: "q",
+      question: "Are there small bottles or reactives in this piece?",
+      options: [
+        { text: "Yes, there are reactives, small bottles, or debris present", next: "qtoxrxn" },
+        { text: "No", next: "f6_1" }
+      ]
+    },
+
+    qtoxrxn: {
+      type: "q",
+      question: "Which is present?",
+      options: [
+        { text: "Reactives", next: "i024" },
+        { text: "Small bottles or solid debris", next: "i023" }
       ]
     },
 
@@ -829,14 +889,13 @@ const data = {
       ]
     },
 
-    i055: {
+    qinorgtox: {
       type: "r",
-      result_title: "Incineration",
+      result_title: "Treatment",
       bullets: [
-        "Process code: QCLPINCIN1/RLP1A",
+        "Process code: LST003819",
         "Segged on truck: No",
-        "DNS?: Depends on P code severity if applicable",
-        "Ross profile (straight to Ross): -08",
+        "DNS?: No, its going to Lowell",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
