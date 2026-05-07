@@ -152,10 +152,19 @@ const data = {
       type: "q",
       question: "What is the primary Hazard Class?",
       options: [
-        { text: "3", next: "ftlp" },
+        { text: "3", next: "qnfpa" },
         { text: "5.1", next: "high_haz" },
         { text: "6.1", next: "f6_1" },
         { text: "8", next: "q8l" }
+      ]
+    },
+    
+    qnfpa: {
+      type: "q",
+      question: "Is this an NFPA1A?",
+      options: [
+        { text: "Yes", next: "nfpa" },
+        { text: "No", next: "ftlp" },
       ]
     },
 
@@ -869,6 +878,17 @@ const data = {
         "Segged on truck: No",
         "DNS?: Yes",
         "Ross profile (straight to Ross): -14DNS",
+        "Placard?: Yes, if over 1,001 lbs."
+      ]
+    },
+
+    nfpa: {
+      type: "r",
+      result_title: "Lowell - NFPA1A",
+      notes: "Inner container must not exceed 1 gallon. Must be packaged in a 5 gallon steel pail,
+      bullets: [
+        "Process code: LLP2A",
+        "Segged on truck: No",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
