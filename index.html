@@ -112,8 +112,15 @@
         <a class="nav-link" href="https://www.epa.gov/system/files/documents/2025-11/ry_2024_tri_chemical_list.pdf" target="_blank">
   PFAS TRI list
 </a>
-      </div>
+       </div>
     </div>
+    <!-- Logo slot -->
+    <div class="nav-logo" id="logo-slot">
+      <img id="logo-img" src="">
+      <div class="nav-logo-placeholder" id="logo-label">your<br>logo</div>
+      <input type="file" accept="image/*" onchange="loadImg(this,'logo-img','logo-label')">
+    </div>
+  </div>
 
   <!-- SEARCH -->
   <div class="search-bar">
