@@ -87,7 +87,7 @@ const data = {
       question: "What is the primary Hazard Class?",
       options: [
         { text: "5.1", next: "qi5_1" },
-        { text: "6.1", next: "qazidestox2" },
+        { text: "6.1", next: "qi6_1" },
         { text: "8", next: "qi8" }
       ]
     },
@@ -152,41 +152,10 @@ const data = {
       type: "q",
       question: "What is the primary Hazard Class?",
       options: [
-        { text: "3", next: "qnfpa" },
+        { text: "3", next: "ftlp" },
         { text: "5.1", next: "high_haz" },
-        { text: "6.1", next: "qazidestox" },
+        { text: "6.1", next: "f6_1" },
         { text: "8", next: "q8l" }
-      ]
-    },
-    
-    qazidestox: {
-      type: "q",
-      question: "Are the following present: sodium azide, arsenic acid/oxides, toxins, or mercury?",
-      options: [
-        { text: "Yes, mercury", next: "qmerc" },
-        { text: "Yes, azides or arsenics", next: "qazides6_1" },
-        { text: "Yes, toxins extracted from living sources", next: "itoxin" },
-        { text: "No", next: "f6.1" }
-      ]
-    },
-    
-    qazides6_1: {
-      type: "q",
-      question: "Which is present?",
-      options: [
-        { text: "Sodium azide, > 1% hazardous mixture", next: "iazide1" },
-        { text: "Sodium azide, > 1%", next: "iazide2" },
-        { text: "Sodium azide, spent", next: "iazide3" },
-        { text: "Arsenic acid/oxides", next: "iazide4" }
-      ]
-    },
-    
-    qnfpa: {
-      type: "q",
-      question: "Is this an NFPA1A?",
-      options: [
-        { text: "Yes", next: "nfpa" },
-        { text: "No", next: "ftlp" },
       ]
     },
 
@@ -228,50 +197,12 @@ const data = {
       ]
     },
 
-    qazidestox2: {
+    qi6_1: {
       type: "q",
-      question: "Are the following present: sodium azide, arsenic acid/oxides, toxins, or mercury?",
+      question: "Is there a 6.1 piece with organics present?",
       options: [
-        { text: "Yes, mercury", next: "qmerc" },
-        { text: "Yes, azides or arsenics", next: "qazides6_1" },
-        { text: "Yes, toxins extracted from living sources", next: "itoxin" },
-        { text: "No", next: "qtoxicinorg" }
-      ]
-    },
-
-    qtoxicinorg: {
-      type: "q",
-      question: "What is the packing group?",
-      options: [
-        { text: "Packing group I", next: "ipg1" },
-        { text: "Packing group II-III", next: "qtoxicexistingorg" }
-      ]
-    },
-
-    qtoxicexistingorg: {
-      type: "q",
-      question: "Is there a preexisting 6.1 organic piece??",
-      options: [
-        { text: "Yes, I will pack this inorganic with the compatible 6.1 organic piece", next: "qtoxorgbottle" },
-        { text: "No, this will be fully inorganic", next: "tinortox" }
-      ]
-    },
-
-    qtoxorgbottle: {
-      type: "q",
-      question: "Are there small bottles or reactives in this piece?",
-      options: [
-        { text: "Yes, there are reactives, small bottles, or debris present", next: "qtoxrxn" },
-        { text: "No", next: "f6_1" }
-      ]
-    },
-
-    qtoxrxn: {
-      type: "q",
-      question: "Which is present?",
-      options: [
-        { text: "Reactives", next: "i024" },
-        { text: "Small bottles or solid debris", next: "i023" }
+        { text: "Yes — I will pack with the 6.1 organic piece", next: "f6_1" },
+        { text: "No", next: "i005" }
       ]
     },
 
@@ -889,13 +820,14 @@ const data = {
       ]
     },
 
-    qinorgtox: {
+    i055: {
       type: "r",
-      result_title: "Treatment",
+      result_title: "Incineration",
       bullets: [
-        "Process code: LST003819",
+        "Process code: QCLPINCIN1/RLP1A",
         "Segged on truck: No",
-        "DNS?: No, its going to Lowell",
+        "DNS?: Depends on P code severity if applicable",
+        "Ross profile (straight to Ross): -08",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
@@ -937,17 +869,6 @@ const data = {
         "Segged on truck: No",
         "DNS?: Yes",
         "Ross profile (straight to Ross): -14DNS",
-        "Placard?: Yes, if over 1,001 lbs."
-      ]
-    },
-
-    nfpa: {
-      type: "r",
-      result_title: "Lowell - NFPA1A",
-      notes: "Inner container must not exceed 1 gallon. Must be packaged in a 5 gallon steel pail,
-      bullets: [
-        "Process code: LLP2A",
-        "Segged on truck: No",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
