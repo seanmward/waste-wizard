@@ -120,9 +120,12 @@
        </div>
     </div>
     <!-- Logo slot -->
-<div class="nav-logo">
-    <img id="logo-img" src="smw.jpg" alt="Logo">
-</div>
+    <div class="nav-logo" id="logo-slot">
+      <img id="logo-img" src="">
+      <div class="nav-logo-placeholder" id=“?”>your<br>logo</div>
+      <input type="file" accept="image/*" onchange="loadImg(this,'logo-img','logo-label')">
+    </div>
+  </div>
 
   <!-- SEARCH -->
   <div class="search-bar">
