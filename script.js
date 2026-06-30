@@ -16,7 +16,7 @@ const data = {
       options: [
         { text: "4.1 — Flammable solid", next: "i012" },
         { text: "4.2 — Spontaneously combustible", next: "i013" },
-        { text: "4.3 — Dangerous when wet", next: "i014" },
+        { text: "4.3 — Dangerous when wet", next: "qAlkali" },
         { text: "5.2 — Organic peroxide", next: "i015" },
         { text: "2, 3, 5.1, 6.1, or 8", next: "qother" }
       ]
@@ -32,6 +32,16 @@ const data = {
       ]
     },
 
+    qAlkali: {
+      type: "q",
+      question: "What type of 4.3 is this?",
+      options: [
+        { text: "Dangerous when wet", next: "i014" },
+        { text: "Water reactive reducers", next: "iwrxnreduc" },
+        { text: "Alkali metals", next: "iAlkali" }
+      ]
+    },
+    
     qliquid: {
       type: "q",
       question: "Is this a 6.1 PG I or PIH, an aerosol, or if neither — is it organic or inorganic?",
@@ -87,11 +97,88 @@ const data = {
       question: "What is the primary Hazard Class?",
       options: [
         { text: "5.1", next: "qi5_1" },
-        { text: "6.1", next: "qi6_1" },
-        { text: "8", next: "qi8" }
+        { text: "6.1", next: "qAzidestox2" },
+        { text: "8", next: "q8i" }
       ]
     },
 
+    qAzidestox2: {
+      type: "q",
+      question: "Are any of the following present: Azides, mercury, or toxins?",
+      options: [
+        { text: "Azides/Mercury/Toxins", next: "qAzidesTox" },
+        { text: "No", next: "qtoxicinorg" }
+      ]
+    },
+
+    qtoxicinorg: {
+      type: "q",
+      question: "What is the packing group?",
+      options: [
+        { text: "PG I", next: "ipg1" },
+        { text: "PG II-III", next: "qtoxicexistingorg" }
+      ]
+    },
+
+    qtoxicexistingorg: {
+      type: "q",
+      question: "Is there an organic piece present?",
+      options: [
+        { text: "Yes, organic piece present ", next: "qtoxorgbottle" },
+        { text: "No organic piece present", next: "tinorgtox" }
+      ]
+    },
+
+    qtoxorgbottle: {
+      type: "q",
+      question: "Are there small bottles or any reactives present?",
+      options: [
+        { text: "Yes, reactives or small bottles present", next: "qtoxrxn" },
+        { text: "No reactives or small bottles present", next: "qtransfer" }
+      ]
+    },
+
+    qtoxrxn: {
+      type: "q",
+      question: "Which is present?",
+      options: [
+        { text: "Small bottles", next: "i023" },
+        { text: "Reactive constituents", next: "i024" }
+      ]
+    },
+    
+    qtransfer: {
+      type: "q",
+      question: "Pack this bottle with organic piece?",
+      options: [
+        { text: "Packed with the organic piece", next: "f6_1" }
+      ]
+    },
+    
+    qMerc: {
+      type: "q",
+      question: "What type of mercury is present?",
+      options: [
+        { text: "Elemental", next: "iHg1" },
+        { text: "Debris", next: "iHg2" },
+        { text: "Devices", next: "iHg3" },
+        { text: "Crushed lamps", next: "iHg4" },
+        { text: "Sodium mercury amalgam", next: "iHg5" },
+        { text: "Mercury compounds", next: "qMercComp" },
+        { text: "Mercury waste containing flammables and organics", next: "iHg9" }
+
+      ]
+    },
+
+    qMercComp: {
+      type: "q",
+      question: "Is this organic or inorganic?",
+      options: [
+        { text: "Organic", next: "iHg6" },
+        { text: "Inorganic", next: "iHg7" }
+      ]
+    },
+    
     qs5_1: {
       type: "q",
       question: "Is there a 5.1 liquid piece?",
@@ -106,7 +193,18 @@ const data = {
       question: "What is the packing group?",
       options: [
         { text: "6.1 PG 1", next: "ipg1" },
-        { text: "6.1 PG 2–3", next: "qpg23" }
+        { text: "6.1 PG 2–3", next: "qpg23" },
+        { text: "Azides/toxins/mercury", next: "qAzoTox" }
+      ]
+    },
+
+    qAzoTox: {
+      type: "q",
+      question: "Which is present?",
+      options: [
+        { text: "Azides", next: "qAzides6_1" },
+        { text: "Mercury", next: "qMerc" },
+        { text: "Toxins extracted from living sources", next: "iToxin" }
       ]
     },
 
@@ -152,13 +250,44 @@ const data = {
       type: "q",
       question: "What is the primary Hazard Class?",
       options: [
-        { text: "3", next: "ftlp" },
+        { text: "3", next: "qftlp" },
         { text: "5.1", next: "high_haz" },
-        { text: "6.1", next: "f6_1" },
+        { text: "6.1", next: "qAzidesTox" },
         { text: "8", next: "q8l" }
       ]
     },
 
+    qftlp: {
+      type: "q",
+      question: "Is this liquid an NFPA class 1A (flash point below 73°F and a boiling point below 100°F)?",
+      options: [
+        { text: "No, not NFPA or spent NFPA", next: "ftlp" },
+        { text: "Yes, NFPA", next: "iNFPA" }
+      ]
+    },
+    
+    qAzidesTox: {
+      type: "q",
+      question: "Are sodium azide (+1), arsenic acid/oxides, or toxins present?",
+      options: [
+        { text: "No", next: "f6_1" },
+        { text: "Yes, mercury", next: "qMerc" },
+        { text: "Yes, sodium azide", next: "qAzides6_1" },
+        { text: "Yes, toxins extracted from living sources", next: "iToxin" }
+      ]
+    },
+
+    qAzides6_1: {
+      type: "q",
+      question: "Which is present?",
+      options: [
+        { text: "Sodium azide >1% hazardous mixture", next: "iAzide1" },
+        { text: "Sodium azide greater than 1%", next: "iAzide2" },
+        { text: "Sodium azide spent", next: "iAzide3" },
+        { text: "Arsenic acid and arsenic oxides", next: "iAzide4" }
+      ]
+    },
+    
     q8l: {
       type: "q",
       question: "Are there reactives present (D003)?",
@@ -202,7 +331,7 @@ const data = {
       question: "Is there a 6.1 piece with organics present?",
       options: [
         { text: "Yes — I will pack with the 6.1 organic piece", next: "f6_1" },
-        { text: "No", next: "i005" }
+        { text: "No", next: "tinorgtox" }
       ]
     },
 
@@ -217,9 +346,10 @@ const data = {
 
     qi8a: {
       type: "q",
-      question: "Are there reactives present (D003)?",
+      question: "Are there reactives (D003) or HF (Hydrofluoric acid) present?",
       options: [
-        { text: "Yes", next: "i006" },
+        { text: "Yes, reactives present", next: "i006" },
+        { text: "Yes, HF present", next: "iHF" },
         { text: "No", next: "t8ia" }
       ]
     },
@@ -584,18 +714,174 @@ const data = {
       ]
     },
 
-    i005: {
+    tinorgtox: {
       type: "r",
-      result_title: "Incineration",
+      result_title: "Treatment",
       bullets: [
-        "Process code: QCLPINCIN3 or RLP3A",
+        "Process code: QCLPTREAT1",
         "Segged on truck: No",
         "DNS?: Yes",
-        "Ross profile (straight to Ross): Verify",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
 
+    iNFPA: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: LLP2A",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Placard?: Yes, if over 1,001 lbs.",
+        "⚠ Inner container max 1 gal. Must be packed in steel 5 DM."
+      ]
+    },
+
+    iAzide1: {
+      type: "r",
+      result_title: "Contact Office",
+      bullets: [
+        "⚠ Contact office. This needs approval before shipping."
+      ]
+    },
+
+    iAzide2: {
+      type: "r",
+      result_title: "Treatment???",
+      bullets: [
+        "Process code: LQCLPAzide",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Placard?: Yes, if over 1,001 lbs.",
+        "⚠ Must be packed alone. DO NOT WET DOWN."
+      ]
+    },
+
+    iAzide3: {
+      type: "r",
+      result_title: "Landfill - Non-Hazardous",
+      bullets: [
+        "Process code: LWHEELPP",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Placard?: No",
+        "⚠ Inner container max 1 gal. Must be packed in steel 5 DM."
+      ]
+    },
+
+    iAzide4: {
+      type: "r",
+      result_title: "Treatment",
+      bullets: [
+        "Process code: LST003819",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Placard?: No",
+        "⚠ Packed alone."
+      ]
+    },
+
+    iToxin: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: RLP3A",
+        "Segged on truck: No",
+        "DNS?: Yes",
+        "Ross profile (straight to Ross): 14DNS or 20DNS if there are no RCRA codes",
+        "Placard?: No",
+        "⚠ Packed alone. Usually shipped in 12.5% bleach with signed NICERT. UN Number is usually UN2922. Refer to guide on homepage."
+      ]
+    },
+
+    iHg1: {
+      type: "r",
+      result_title: "Treatment/Recycling - Elemental Hg",
+      bullets: [
+        "Process code: LCRSHGELEM",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg2: {
+      type: "r",
+      result_title: "Treatment/Recycling - Hg Devices",
+      bullets: [
+        "Process code: LCRSHGDEBRIS",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg3: {
+      type: "r",
+      result_title: "Treatment/Recycling - Hg Debris",
+      bullets: [
+        "Process code: LCRSHAPP",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg4: {
+      type: "r",
+      result_title: "Treatment/Recycling - Crushed Hg Lamps",
+      bullets: [
+        "Process code: LCRSBB",
+        "D-code subcategory: D009 mercury; low mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg5: {
+      type: "r",
+      result_title: "SET - Sodium Hg Amalgam",
+      bullets: [
+        "Process code: SET profile",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg6: {
+      type: "r",
+      result_title: "Treatment/Recycling - Organic Hg Compounds",
+      bullets: [
+        "Process code: LSTHG",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg7: {
+      type: "r",
+      result_title: "Treatment/Recycling - Inorganic Hg Compounds",
+      bullets: [
+        "Process code: LSTHG",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No"
+      ]
+    },
+
+    iHg9: {
+      type: "r",
+      result_title: "Treatment/Recycling - Flammable Hg Compounds",
+      bullets: [
+        "Process code: Arcwood, SET best options",
+        "D-code subcategory: D009 mercury; high mercury",
+        "Segged on truck: No",
+        "Placard?: No",
+        "⚠ Contact office"
+      ]
+    },
+    
     i006: {
       type: "r",
       result_title: "Incineration",
@@ -716,10 +1002,39 @@ const data = {
         "Segged on truck: Yes",
         "DNS?: Yes",
         "Ross profile (straight to Ross): -24DNS",
-        "Placard?: Yes, any amount"
+        "Placard?: Yes, any amount",
+        "⚠ Must be packed in 5-30 gal outer container"
       ]
     },
 
+    iAlkali: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: QCLPINCIN3/RLP3A",
+        "D-code subcategory: D003, water-reactive",
+        "Segged on truck: Yes",
+        "DNS?: Yes",
+        "Ross profile (straight to Ross): -24DNS",
+        "Placard?: Yes, any amount",
+        "⚠ Must be under oil with less than 10 lbs total metal. Max outer container is 5 gals. No Barium, cesium, or Rubidium allowed at Ross."
+      ]
+    },
+
+    iwrxnreduc: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: QCLPINCIN3/RLP3A",
+        "D-code subcategory: D003, water-reactive",
+        "Segged on truck: Yes",
+        "DNS?: Yes",
+        "Ross profile (straight to Ross): -12DNS",
+        "Placard?: Yes, any amount",
+        "⚠ Metal hydrides here."
+      ]
+    },
+    
     i015: {
       type: "r",
       result_title: "Incineration",
@@ -729,7 +1044,8 @@ const data = {
         "Segged on truck: Yes",
         "DNS?: Yes",
         "Ross profile (straight to Ross): -07DNS",
-        "Instant placard?: No"
+        "Instant placard?: No",
+        "⚠ Must include constituents and percentages in shipping name that add to 100%. Must include CAS and product number in notes."
       ]
     },
 
@@ -820,6 +1136,41 @@ const data = {
       ]
     },
 
+    i023: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: QCLPINCIN1/RLP1A",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Ross profile (straight to Ross): -08, or -15 if no RCRA codes",
+        "Placard?: Yes, if over 1,001 lbs."
+      ]
+    },
+
+    i024: {
+      type: "r",
+      result_title: "Incineration",
+      bullets: [
+        "Process code: QCLPINCIN3/RLP3A",
+        "Segged on truck: No",
+        "DNS?: Yes",
+        "Ross profile (straight to Ross): -14DNS, or -20 if no RCRA codes",
+        "Placard?: Yes, if over 1,001 lbs."
+      ]
+    },
+
+    iHF: {
+      type: "r",
+      result_title: "Treatment - HF",
+      bullets: [
+        "Process code: LSTHFLSP",
+        "Segged on truck: No",
+        "DNS?: No",
+        "Placard?: Yes, if over 1,001 lbs."
+      ]
+    },
+    
     i055: {
       type: "r",
       result_title: "Incineration",
