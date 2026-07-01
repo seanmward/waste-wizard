@@ -966,18 +966,35 @@ const data = {
       ]
     },
 
-    i012: {
-      type: "r",
-      result_title: "Incineration",
+  i012: {
+  type: "r",
+  result_title: "Incineration",
+  notes: "",
+  facilities: {
+    facility1: {
+      label: "Canada",
       bullets: [
-        "Process code: QCLPINCIN1/RLP1A",
+        "Profile: 3LPGEE"
+        "Process code: QCLPINCIN1",
         "D-code subcategory: D001, ignitable",
         "Segged on truck: Yes",
         "DNS?: No",
-        "Ross profile (straight to Ross): -03",
         "Placard?: Yes, if over 1,001 lbs."
       ]
     },
+    facility2: {
+      label: "Ross",
+      bullets: [
+        "Profile: -03L",
+        "Process code: RLP1A",
+        "D-code subcategory: short form, no subcategory",
+        "Segged on truck: Yes",
+        "DNS?: No",
+        "Placard?: Yes, if over 1,001 lbs."
+      ]
+    }
+  }
+},
 
     i013: {
       type: "r",
@@ -1327,22 +1344,104 @@ function showResult(node) {
 
   document.getElementById("result-title").innerText = node.result_title;
 
-  const bulletsList = document.getElementById("result-bullets");
-  bulletsList.innerHTML = "";
-  if (node.bullets) {
-    node.bullets.forEach(b => {
-      const li = document.createElement("li");
-      li.innerHTML = b;
-      bulletsList.appendChild(li);
-    });
-  }
-
   const notesDiv = document.getElementById("result-notes");
   if (node.notes) {
     notesDiv.style.display = "block";
     notesDiv.innerHTML = "<p>" + node.notes + "</p>";
   } else {
     notesDiv.style.display = "none";
+  }
+
+  const bulletsContainer = document.getElementById("result-bullets-container");
+  bulletsContainer.innerHTML = "";
+
+  if (node.facilities) {
+    const facilityKeys = Object.keys(node.facilities);
+
+    // Build tabs
+    const tabsDiv = document.createElement("div");
+    tabsDiv.className = "tabs";
+
+    facilityKeys.forEach((key, i) => {
+      const tab = document.createElement("div");
+      tab.className = "tab" + (i === 0 ? " active" : "");
+      tab.innerText = node.facilities[key].label;
+      tab.onclick = function() { switchTab(this, "tab-" + key); };
+      tabsDiv.appendChild(tab);
+    });
+
+    // Side by side tab
+    const sbsTab = document.createElement("div");
+    sbsTab.className = "tab";
+    sbsTab.innerText = "Side by Side";
+    sbsTab.onclick = function() { switchTab(this, "tab-sbs"); };
+    tabsDiv.appendChild(sbsTab);
+
+    bulletsContainer.appendChild(tabsDiv);
+
+    // Build individual facility tab contents
+    facilityKeys.forEach((key, i) => {
+      const content = document.createElement("div");
+      content.className = "tab-content" + (i === 0 ? " active" : "");
+      content.id = "tab-" + key;
+
+      const facilityLabel = document.createElement("div");
+      facilityLabel.className = "facility-label";
+      facilityLabel.innerText = node.facilities[key].label;
+      content.appendChild(facilityLabel);
+
+      const ul = document.createElement("ul");
+      node.facilities[key].bullets.forEach(b => {
+        const li = document.createElement("li");
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+      content.appendChild(ul);
+      bulletsContainer.appendChild(content);
+    });
+
+    // Build side by side tab content
+    const sbsContent = document.createElement("div");
+    sbsContent.className = "tab-content";
+    sbsContent.id = "tab-sbs";
+
+    const sbsRow = document.createElement("div");
+    sbsRow.className = "side-by-side";
+
+    facilityKeys.forEach(key => {
+      const col = document.createElement("div");
+      col.className = "sbs-col";
+
+      const facilityLabel = document.createElement("div");
+      facilityLabel.className = "facility-label";
+      facilityLabel.innerText = node.facilities[key].label;
+      col.appendChild(facilityLabel);
+
+      const ul = document.createElement("ul");
+      node.facilities[key].bullets.forEach(b => {
+        const li = document.createElement("li");
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+      col.appendChild(ul);
+      sbsRow.appendChild(col);
+    });
+
+    sbsContent.appendChild(sbsRow);
+    bulletsContainer.appendChild(sbsContent);
+
+  } else {
+    // Fallback for nodes that still use old bullets array
+    const ul = document.createElement("ul");
+    ul.id = "result-bullets";
+    if (node.bullets) {
+      node.bullets.forEach(b => {
+        const li = document.createElement("li");
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+    }
+    bulletsContainer.appendChild(ul);
   }
 }
 
