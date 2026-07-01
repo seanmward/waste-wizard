@@ -843,3 +843,100 @@ a:hover { color: #cc0000; }
   border-bottom-color: #444444;
   cursor: pointer;
 }
+
+
+/* ============================================================
+   FACILITY TABS
+============================================================ */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #000080;
+  padding: 0 16px;
+  margin-top: 8px;
+}
+
+.tab {
+  padding: 5px 16px;
+  font-family: Geneva, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #dddddd;
+  border: 2px solid #888;
+  border-top-color: #cccccc;
+  border-left-color: #cccccc;
+  border-right-color: #444444;
+  border-bottom: none;
+  color: #444444;
+  margin-right: 3px;
+  position: relative;
+  top: 2px;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #000080;
+  border-top-color: #444444;
+  border-left-color: #444444;
+  border-right-color: #cccccc;
+  z-index: 1;
+}
+
+.tab:hover:not(.active) {
+  background: #ccccee;
+  color: #000066;
+}
+
+.tab-content {
+  display: none;
+  padding: 12px 16px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.facility-label {
+  font-family: Geneva, Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888877;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.tab-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tab-content ul li {
+  font-family: Geneva, Arial, sans-serif;
+  font-size: 11px;
+  padding: 4px 0;
+  border-bottom: 1px dotted #cccccc;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.tab-content ul li:last-child {
+  border-bottom: none;
+}
+
+.side-by-side {
+  display: flex;
+  gap: 0;
+}
+
+.side-by-side .sbs-col {
+  flex: 1;
+  padding: 0 12px;
+  border-right: 1px solid #cccccc;
+}
+
+.side-by-side .sbs-col:last-child {
+  border-right: none;
+}
