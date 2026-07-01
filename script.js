@@ -966,35 +966,35 @@ const data = {
       ]
     },
 
-  i012: {
-  type: "r",
-  result_title: "Incineration",
-  notes: "",
-  facilities: {
-    facility1: {
-      label: "Canada",
-      bullets: [
-        "Profile: 3LPGEE"
-        "Process code: QCLPINCIN1",
-        "D-code subcategory: D001, ignitable",
-        "Segged on truck: Yes",
-        "DNS?: No",
-        "Placard?: Yes, if over 1,001 lbs."
-      ]
+    i012: {
+      type: "r",
+      result_title: "Incineration",
+      notes: "",
+      facilities: {
+        facility1: {
+          label: "Canada",
+          bullets: [
+            "Profile: 3LPGEE"
+            "Process code: QCLPINCIN1",
+            "D-code subcategory: D001, ignitable",
+            "Segged on truck: Yes",
+            "DNS?: No",
+            "Placard?: Yes, if over 1,001 lbs."
+          ]
+        },
+        facility2: {
+          label: "Ross",
+          bullets: [
+            "Profile: -03L",
+            "Process code: RLP1A",
+            "D-code subcategory: short form, no subcategory",
+            "Segged on truck: Yes",
+            "DNS?: No",
+            "Placard?: Yes, if over 1,001 lbs."
+          ]
+        }
+      }
     },
-    facility2: {
-      label: "Ross",
-      bullets: [
-        "Profile: -03L",
-        "Process code: RLP1A",
-        "D-code subcategory: short form, no subcategory",
-        "Segged on truck: Yes",
-        "DNS?: No",
-        "Placard?: Yes, if over 1,001 lbs."
-      ]
-    }
-  }
-},
 
     i013: {
       type: "r",
