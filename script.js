@@ -1378,3 +1378,11 @@ function openImgModal(src) {
 function closeImgModal() {
   document.getElementById("img-modal").style.display = "none";
 }
+
+function switchTab(el, id) {
+  const card = el.closest('.result-card');
+  card.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  card.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
