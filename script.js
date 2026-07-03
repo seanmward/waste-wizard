@@ -974,7 +974,7 @@ const data = {
         facility1: {
           label: "Canada",
           bullets: [
-            "Profile: 3LPGEE"
+            "Profile: 3LPGEE",
             "Process code: QCLPINCIN1",
             "D-code subcategory: D001, ignitable",
             "Segged on truck: Yes",
