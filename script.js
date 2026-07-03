@@ -11,7 +11,7 @@ const data = {
 
     primary: {
       type: "q",
-      question: "What is the primary Hazard Class?",
+      question: "What is the primary hazard class?",
       help: "Check Section 14 of the SDS.",
       options: [
         { text: "4.1 — Flammable solid", next: "i012" },
