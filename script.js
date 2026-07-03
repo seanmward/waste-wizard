@@ -489,7 +489,7 @@ const data = {
         "DNS?: No",
         "Ross profile (straight to Ross): -16",
         "Placard?: Yes, if over 1,001 lbs.",
-        "⚠ Extras: NO VERM"
+        "⚠: NO VERM"
       ]
     },
 
@@ -502,7 +502,7 @@ const data = {
         "Segged on truck: No",
         "DNS?: No",
         "Placard?: Yes, if over 1,001 lbs.",
-        "⚠ Extras: NO VERM"
+        "⚠: NO VERM"
       ]
     },
 
@@ -564,15 +564,34 @@ const data = {
     t8iba: {
       type: "r",
       result_title: "Treatment",
-      bullets: [
-        "Process code: QCLPTREAT1 or LSTBLOP",
-        "D-code subcategory: D002, corrosive",
-        "Segged on truck: No",
-        "DNS?: No",
-        "Ross profile (straight to Ross): -10",
-        "Placard?: Yes, if over 1,001 lbs.",
-        "⚠ Corrosives must not be packaged in DM"
-      ]
+      notes: "",
+      facilities: {
+        facility1: {
+          label: "Canada",
+          bullets: [
+            "Profile: QCLP2??????",
+            "Process code: TREAT1",
+            "D-code subcategory: D002, corrosive",
+            "Segged on truck: No",
+            "DNS?: No",
+            "Placard?: Yes, if over 1,001 lbs.",
+            "⚠ Corrosives must not be packaged in DM"
+
+          ]
+        },
+        facility2: {
+          label: "Lowell",
+          bullets: [
+            "Process code: LSTBLOP",
+            "D-code subcategory: D002, corrosive",
+            "Segged on truck: No",
+            "DNS?: No",
+            "Placard?: Yes, if over 1,001 lbs.",
+            "⚠ Corrosives must not be packaged in DM"
+
+          ]
+        }
+      }
     },
 
     t8ibb: {
