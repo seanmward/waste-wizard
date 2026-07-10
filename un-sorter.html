@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sean Ward's UN Number Sorter</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- paste your google analytics tag here -->
+</head>
+<body>
+
+<!-- =====================================================
+     UN SORTER APP
+====================================================== -->
+<div id="un-app">
+
+  <div class="app-top-bar">
+    <span class="app-top-title">Waste Wizard — UN / Shipping Name Determinator</span>
+    <button class="app-top-btn" onclick="unGoBack()">◀ Back</button>
+    <button class="app-top-btn" onclick="unStartOver()">↺ Start Over</button>
+    <button class="app-top-btn" onclick="window.location.href='index.html'">🏠 Home</button>
+  </div>
+
+  <div class="app-wrap">
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; UN / Shipping Name Determinator
+    </div>
+
+    <!-- QUESTION SECTION -->
+    <div id="un-question-section">
+      <div class="q-card">
+        <div class="q-card-header">
+          <span id="un-q-header-label">UN / Shipping Name Determinator</span>
+          <button id="un-help-btn" style="display:none;" class="help-link">? Help</button>
+        </div>
+        <div class="q-body">
+          <div class="q-text" id="un-question"></div>
+          <div class="answers" id="un-answers"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="unGoBack()">◀ Back</button>
+        <button class="ctrl-btn" onclick="unStartOver()">↺ Start Over</button>
+        <button class="ctrl-btn" onclick="window.location.href='index.html'">🏠 Home</button>
+      </div>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div id="un-result-section" style="display:none;">
+      <div class="result-card">
+        <div class="result-header">
+          <span>✔ UN / Shipping Name Result</span>
+          <span>Result</span>
+        </div>
+        <div class="result-title-row">
+          <span class="result-title" id="un-result-title"></span>
+        </div>
+        <div class="result-body">
+          <div class="result-left">
+            <h3>Details</h3>
+            <ul id="un-result-details">
+              <li><b>UN Number:</b> <span id="un-number">—</span></li>
+              <li><b>Shipping Name:</b> <span id="un-shipping-name">—</span></li>
+              <li><b>Export Notice:</b> <span id="un-export">—</span></li>
+            </ul>
+          </div>
+          <div class="result-right">
+            <h3>Notes</h3>
+            <div id="un-notes"></div>
+            <button class="done-btn" onclick="unStartOver()" style="margin-top:12px;">↺ Start Over</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="unGoBack()">◀ Back</button>
+        <button class="ctrl-btn" onclick="unStartOver()">↺ Start Over</button>
+        <button class="ctrl-btn" onclick="window.location.href='index.html'">🏠 Home</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- HELP MODAL -->
+<div id="un-help-modal" style="display:none;">
+  <div id="help-box">
+    <div id="help-titlebar">
+      <span>Help</span>
+      <button onclick="unCloseHelp()">✕</button>
+    </div>
+    <div id="un-help-text"></div>
+    <div id="help-footer"><button onclick="unCloseHelp()">Close</button></div>
+  </div>
+</div>
+
+<script src="un-sorter.js"></script>
+</body>
+</html>
