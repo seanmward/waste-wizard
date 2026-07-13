@@ -520,8 +520,8 @@ const unData = {
 
     r03: {
       type: "r",
-      un_number: "UN1992",
       shipping_name: "Flammable liquids, toxic",
+      un_number: "UN1992",
       export: "Yes — can ship to Canada",
       notes: ""
     },
