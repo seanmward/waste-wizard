@@ -1201,7 +1201,7 @@ function unShowResult(node) {
   document.getElementById("un-question-section").style.display = "none";
   document.getElementById("un-result-section").style.display = "block";
 
-  document.getElementById("un-result-title").innerText = node.un_number;
+  document.getElementById("un-result-title").innerText = node.shipping_name;
   document.getElementById("un-number").innerText = node.un_number || "—";
   document.getElementById("un-shipping-name").innerText = node.shipping_name || "—";
   document.getElementById("un-export").innerText = node.export || "—";
