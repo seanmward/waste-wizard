@@ -520,8 +520,8 @@ const unData = {
 
     r03: {
       type: "r",
-      shipping_name: "Flammable liquids",
       un_number: "UN1993",
+      shipping_name: "Flammable liquids",
       export: "Yes — can ship to Canada",
       notes: ""
     },
@@ -536,9 +536,9 @@ const unData = {
 
     r05: {
       type: "r",
-      un_number: "UN1992",
-      shipping_name: "",
-      export: "",
+      un_number: "UN1993",
+      shipping_name: "Flammable liquids",
+      export: "Yes - can ship to Canada",
       notes: ""
     },
 
