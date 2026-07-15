@@ -545,48 +545,48 @@ const unData = {
     r06: {
       type: "r",
       un_number: "UN2924",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable liquids, corrosive, n.o.s",
+      export: "Yes",
       notes: "Keep acids and bases separate, even though the shipping name lumps them."
     },
 
     r07: {
       type: "r",
       un_number: "UN3286",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable liquid, toxic, corrosive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r08: {
       type: "r",
       un_number: "UN1993",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable liquids, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r09: {
       type: "r",
       un_number: "UN1325",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable solids, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r10: {
       type: "r",
       un_number: "UN2925",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable solids, corrosive, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r11: {
       type: "r",
       un_number: "UN2926",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Flammable solids, toxic, organic, n.o.s.",
+      export: "No",
       notes: ""
     },
 
@@ -601,112 +601,112 @@ const unData = {
     r13: {
       type: "r",
       un_number: "UN2813",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive solid, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r14: {
       type: "r",
       un_number: "UN3396",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Organometallic substance, solid, water-reactive, flammable",
+      export: "Yes",
       notes: ""
     },
 
     r15: {
       type: "r",
       un_number: "UN3399",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Organometallic substance, liquid, water-reactive, flammable",
+      export: "Yes",
       notes: ""
     },
 
     r16: {
       type: "r",
       un_number: "UN3397",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Organometallic substance, solid, water-reactive, self-heating",
+      export: "Yes",
       notes: ""
     },
 
     r17: {
       type: "r",
       un_number: "UN3129",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive liquid, corrosive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r18: {
       type: "r",
       un_number: "UN3131",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive solid, corrosive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r20: {
       type: "r",
       un_number: "UN3130",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive liquid, toxic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r21: {
       type: "r",
       un_number: "UN3134",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive solid, toxic, n.o.s.",
+      export: "No",
       notes: ""
     },
 
     r22: {
       type: "r",
       un_number: "UN3139",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing liquid, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r23: {
       type: "r",
       un_number: "UN1479",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing solid, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r24: {
       type: "r",
       un_number: "UN3098",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing liquid, corrosive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r25: {
       type: "r",
       un_number: "UN2085",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing solid, corrosive, n.o.s.",
+      export: "No",
       notes: ""
     },
 
     r26: {
       type: "r",
       un_number: "UN3099",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing liquid, toxic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r27: {
       type: "r",
       un_number: "UN3087",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Oxidizing solid, toxic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
@@ -721,184 +721,184 @@ const unData = {
     r29: {
       type: "r",
       un_number: "UN2811",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r30: {
       type: "r",
       un_number: "UN3288",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solid, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r31: {
       type: "r",
       un_number: "UN2810",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquids, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r32: {
       type: "r",
       un_number: "UN3287",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquid, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r33: {
       type: "r",
       un_number: "UN2929",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquids, flammable, organic, n.o.s.",
+      export: "No",
       notes: ""
     },
 
     r34: {
       type: "r",
       un_number: "UN3123",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquids, water-reactive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r35: {
       type: "r",
       un_number: "UN3125",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, water-reactive, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r36: {
       type: "r",
       un_number: "UN3122",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquids, oxidizing, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r37: {
       type: "r",
       un_number: "UN3086",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, oxidizing, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r38: {
       type: "r",
       un_number: "UN2927",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquids, corrosive, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r39: {
       type: "r",
       un_number: "UN2928",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, corrosive, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r40: {
       type: "r",
       un_number: "UN3289",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic liquid, corrosive, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r41: {
       type: "r",
       un_number: "UN3290",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solid, corrosive, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r42: {
       type: "r",
       un_number: "UN3381",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid [with an inhalation toxicity lower than or equal to 200 ml/m3 and saturated vapor concentration greater than or equal to 500 LC50]",
+      export: "No",
       notes: ""
     },
 
     r43: {
       type: "r",
       un_number: "UN3382",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid [with an inhalation toxicity toxicity lower than or equal to 1000 ml/m3 and saturated vapor concentration greater than or equal to 10 LC50]",
+      export: "No",
       notes: ""
     },
 
     r44: {
       type: "r",
       un_number: "UN3389",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, corrosive [with an inhalation toxicity lower than or equal to 200 ml/m3 and saturated vapor concentration greater than or equal to 500 LC50]",
+      export: "No",
       notes: ""
     },
 
     r45: {
       type: "r",
       un_number: "UN3390",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, corrosive [with an inhalation toxicity lower than or equal to 1000 ml/m3 and saturated vapor concentration greater than or equal to 10 LC50]",
+      export: "No",
       notes: ""
     },
 
     r46: {
       type: "r",
       un_number: "UN3383",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, flammable [with an inhalation toxicity lower than or equal to 200 ml/m3 and saturated vapor concentration greater than or equal to 500 LC50]",
+      export: "No",
       notes: ""
     },
 
     r47: {
       type: "r",
       un_number: "UN3384",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, flammable [with an inhalation toxicity lower than or equal to 1000 ml/m3 and saturated vapor concentration greater than or equal to 10 LC50]",
+      export: "No",
       notes: ""
     },
 
     r48: {
       type: "r",
       un_number: "UN3385",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, water-reactive [with an inhalation toxicity lower than or equal to 200 ml/m3 and saturated vapor concentration greater than or equal to 500 LC50]",
+      export: "No",
       notes: ""
     },
 
     r49: {
       type: "r",
       un_number: "UN3386",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, water-reactive [with an inhalation toxicity lower than or equal to 1000 ml/m3 and saturated vapor concentration greater than or equal to 10 LC50]",
+      export: "No",
       notes: ""
     },
 
     r50: {
       type: "r",
       un_number: "UN3387",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, oxidizing [with an inhalation toxicity lower than or equal to 200 ml/m3 and saturated vapor concentration greater than or equal to 500 LC50]",
+      export: "No",
       notes: ""
     },
 
     r51: {
       type: "r",
       un_number: "UN3388",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic by inhalation liquid, oxidizing [with an inhalation toxicity lower than or equal to 1000 ml/m3 and saturated vapor concentration greater than or equal to 10 LC50]",
+      export: "No",
       notes: ""
     },
 
@@ -913,104 +913,104 @@ const unData = {
     r53: {
       type: "r",
       un_number: "UN1760",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquids, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r54: {
       type: "r",
       un_number: "UN1759",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solids, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r55: {
       type: "r",
       un_number: "UN3265",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquid, acidic, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r56: {
       type: "r",
       un_number: "UN3261",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solid, acidic, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r57: {
       type: "r",
       un_number: "UN3264",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquid, acidic, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r58: {
       type: "r",
       un_number: "UN3262",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solid, basic, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r59: {
       type: "r",
       un_number: "UN3267",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquid, basic, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r60: {
       type: "r",
       un_number: "UN3263",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solid, basic, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r61: {
       type: "r",
       un_number: "UN3266",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquid, basic, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r62: {
       type: "r",
       un_number: "UN3262",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solid, basic, inorganic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r63: {
       type: "r",
       un_number: "UN2920",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquids, flammable, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r64: {
       type: "r",
       un_number: "UN2921",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solids, flammable, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r65: {
       type: "r",
       un_number: "UN3301",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquid, self-heating",
+      export: "No",
       notes: ""
     },
 
@@ -1025,15 +1025,15 @@ const unData = {
     r67: {
       type: "r",
       un_number: "UN3094",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquids, water-reactive",
+      export: "No",
       notes: ""
     },
 
     r68: {
       type: "r",
       un_number: "UN3096",
-      shipping_name: "",
+      shipping_name: "Corrosive solids, water-reactive",
       export: "",
       notes: ""
     },
@@ -1041,32 +1041,32 @@ const unData = {
     r69: {
       type: "r",
       un_number: "UN3093",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquids, oxidizing",
+      export: "No",
       notes: ""
     },
 
     r70: {
       type: "r",
       un_number: "UN3084",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solids, oxidizing",
+      export: "No",
       notes: ""
     },
 
     r71: {
       type: "r",
       un_number: "UN2922",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive liquids, toxic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r72: {
       type: "r",
       un_number: "UN2923",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Corrosive solids, toxic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
@@ -1113,24 +1113,24 @@ const unData = {
     r78: {
       type: "r",
       un_number: "UN2930",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, flammable, organic, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r79: {
       type: "r",
       un_number: "UN3124",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Toxic solids, self-heating, n.o.s.",
+      export: "Yes",
       notes: ""
     },
 
     r80: {
       type: "r",
       un_number: "UN3148",
-      shipping_name: "",
-      export: "",
+      shipping_name: "Water-reactive liquid, n.o.s.",
+      export: "Yes",
       notes: ""
     }
 
