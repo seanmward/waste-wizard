@@ -102,43 +102,35 @@
 </div><!-- end three-col -->
 
   <!-- NAV BAR -->
-  <div class="nav-bar">
-    <div class="nav-store">
-      <span class="nav-store-top">Waste<br>Wizard</span>
+<div class="nav-bar">
+  <div class="nav-store">
+    <span class="nav-store-top">Waste<br>Wizard</span>
+  </div>
+  <div class="nav-links">
+    <div class="nav-col">
+      <span class="nav-link" onclick="startApp()">Classification Key</span>
+      <span class="nav-link">About This Tool</span>
     </div>
-    <div class="nav-links">
-      <div class="nav-col">
-        <span class="nav-link" onclick="startApp()">Classification Key</span>
-        <span class="nav-link">About This Tool</span>
-      </div>
-      <div class="nav-col">
-        <span class="nav-link" onclick="openImgModal('brandeismap.png')">References</span>
-        <a class="nav-link" href="blob:https://outlook.cloud.microsoft/e79a7976-a859-4af8-bb26-86d32087d09a" target="_blank">
-  NICERT Template
-      </div>
-      <div class="nav-col">
-        <a class="nav-link" href="https://triumvirate-my.sharepoint.com/:x:/p/sean_ward/IQAOlCQzcvkDTru_jTFC8PUJAQIB-U_YaD9LpfjOpoGh-JY?e=9PpBV2" target="_blank">
-  SET Lab Pack Template
-        <a class="nav-link" href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-177/subpart-C/section-177.848" target="_blank">
-  Truck Seg Table
-</a>
-      </div>
-      <div class="nav-col">
-        <a class="nav-link" href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-A/section-173.2a" target="_blank">
-  Precedence of Hazards Table
-</a>
-        <a class="nav-link" href="https://www.epa.gov/system/files/documents/2025-11/ry_2024_tri_chemical_list.pdf" target="_blank">
-  PFAS TRI list
-</a>
-       </div>
+    <div class="nav-col">
+      <span class="nav-link" onclick="openImgModal('brandeismap.png')">References</span>
+      <a class="nav-link" href="blob:https://outlook.cloud.microsoft/e79a7976-a859-4af8-bb26-86d32087d09a" target="_blank">NICERT Template</a>
     </div>
-    <!-- Logo slot -->
-    <div class="nav-logo" id="logo-slot">
-      <img id="logo-img" src="">
-      <div class="nav-logo-placeholder" id=“?”>your<br>logo</div>
-      <input type="file" accept="image/*" onchange="loadImg(this,'logo-img','logo-label')">
+    <div class="nav-col">
+      <a class="nav-link" href="https://triumvirate-my.sharepoint.com/:x:/p/sean_ward/IQAOlCQzcvkDTru_jTFC8PUJAQIB-U_YaD9LpfjOpoGh-JY?e=9PpBV2" target="_blank">SET Lab Pack Template</a>
+      <a class="nav-link" href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-177/subpart-C/section-177.848" target="_blank">Truck Seg Table</a>
+    </div>
+    <div class="nav-col">
+      <a class="nav-link" href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-A/section-173.2a" target="_blank">Precedence of Hazards Table</a>
+      <a class="nav-link" href="https://www.epa.gov/system/files/documents/2025-11/ry_2024_tri_chemical_list.pdf" target="_blank">PFAS TRI list</a>
     </div>
   </div>
+  <!-- Logo slot -->
+  <div class="nav-logo" id="logo-slot">
+    <img id="logo-img" src="">
+    <div class="nav-logo-placeholder" id="logo-label">your<br>logo</div>
+    <input type="file" accept="image/*" onchange="loadImg(this,'logo-img','logo-label')">
+  </div>
+</div>
 
   <!-- SEARCH -->
   <div class="search-bar">
